@@ -286,7 +286,7 @@
     self.presetName = AVAssetExportPresetMediumQuality;
     self.maxCropVideoDuration = 30;
     
-    self.iconThemeColor = [UIColor colorWithRed:31 / 255.0 green:185 / 255.0 blue:34 / 255.0 alpha:1.0];
+    self.iconThemeColor = [UIColor colorWithRed:11 / 255.0 green:151 / 255.0 blue:106 / 255.0 alpha:1.0];
     [self configDefaultBtnTitle];
     
     CGFloat cropViewWH = MIN(self.view.tz_width, self.view.tz_height) / 3 * 2;
@@ -1019,6 +1019,8 @@
         preferredLanguage = @"zh-Hant";
     } else if ([preferredLanguage rangeOfString:@"vi"].location != NSNotFound) {
         preferredLanguage = @"vi";
+    } else if ([preferredLanguage rangeOfString:@"ko"].location != NSNotFound) {
+        preferredLanguage = @"ko";
     } else {
         preferredLanguage = @"en";
     }

@@ -117,7 +117,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6D12FC191D66B71E00182C44 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		6D12FC1A1D66B71E00182C44 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		6D32B9BB1CD83640005CE1E0 /* LxGridViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LxGridViewFlowLayout.h; sourceTree = "<group>"; };
 		6D32B9BC1CD83640005CE1E0 /* LxGridViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LxGridViewFlowLayout.m; sourceTree = "<group>"; };
@@ -130,6 +129,7 @@
 		6DC84D091DF5358500A107A9 /* TZImageCropManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZImageCropManager.m; sourceTree = "<group>"; };
 		6DD050291DF659ED0057C78D /* TZProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZProgressView.h; sourceTree = "<group>"; };
 		6DD0502A1DF659ED0057C78D /* TZProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZProgressView.m; sourceTree = "<group>"; };
+		853B655D2684932800653D3E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		90020E1220F8840800D3AB10 /* TZImagePickerController.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TZImagePickerController.podspec; sourceTree = SOURCE_ROOT; };
 		90020E1420F8840E00D3AB10 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		9005E2B1257A462E002A8682 /* UIView+TZLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TZLayout.m"; sourceTree = "<group>"; };
@@ -176,7 +176,6 @@
 		9038D5901C3974F0007DE549 /* TZTestCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZTestCell.m; sourceTree = "<group>"; };
 		903996921F447604005E77C2 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		903996941F447609005E77C2 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
-		909DBC95216B981B00926570 /* ar-001 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ar-001"; path = "ar-001.lproj/Main.strings"; sourceTree = "<group>"; };
 		909DBC96216B981B00926570 /* ar-001 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ar-001"; path = "ar-001.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		909DBC97216B981B00926570 /* ar-001 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ar-001"; path = "../ar-001.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		90A74B84203287C200D84C2A /* tz-ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "tz-ru"; path = Localizable.strings; sourceTree = "<group>"; };
@@ -678,8 +677,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				900E65891C2BB8D5003D9A9E /* Base */,
-				6D12FC191D66B71E00182C44 /* zh-Hans */,
-				909DBC95216B981B00926570 /* ar-001 */,
+				853B655D2684932800653D3E /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
