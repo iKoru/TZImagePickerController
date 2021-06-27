@@ -268,13 +268,25 @@
 }
 
 - (void)configDefaultSetting {
+    UIFont* navigationTitleFont = nil;
+    UIFont* navigationButtonFont = nil;
+    if([[TZImagePickerConfig sharedInstance].preferredLanguage isEqualToString:@"ko"]){
+        navigationTitleFont = [UIFont fontWithName:@"Spoqa Han Sans Neo Regular" size:17];//[UIFont systemFontOfSize:16];
+        navigationButtonFont = [UIFont fontWithName:@"Spoqa Han Sans Neo Regular" size:16];//[UIFont systemFontOfSize:16];
+    }else if([[TZImagePickerConfig sharedInstance].preferredLanguage  hasPrefix:@"en"]){
+        navigationTitleFont = [UIFont fontWithName:@"Montserrat-Regular" size:17];//[UIFont systemFontOfSize:16];
+        navigationButtonFont = [UIFont fontWithName:@"Montserrat-Regular" size:16];//[UIFont systemFontOfSize:16];
+    }else{
+        navigationTitleFont = [UIFont systemFontOfSize:17];
+        navigationButtonFont = [UIFont systemFontOfSize:16];
+    }
     self.autoSelectCurrentWhenDone = YES;
     self.timeout = 30;
     self.photoWidth = 828.0;
     self.photoPreviewMaxWidth = 600;
     self.naviTitleColor = [UIColor whiteColor];
-    self.naviTitleFont = [UIFont systemFontOfSize:17];
-    self.barItemTextFont = [UIFont systemFontOfSize:15];
+    self.naviTitleFont = navigationTitleFont;
+    self.barItemTextFont = navigationButtonFont;
     self.barItemTextColor = [UIColor whiteColor];
     self.allowPreview = YES;
     // 2.2.26版本，不主动缩放图片，降低内存占用
@@ -1013,13 +1025,7 @@
     if (!preferredLanguage || !preferredLanguage.length) {
         preferredLanguage = [NSLocale preferredLanguages].firstObject;
     }
-    if ([preferredLanguage rangeOfString:@"zh-Hans"].location != NSNotFound) {
-        preferredLanguage = @"zh-Hans";
-    } else if ([preferredLanguage rangeOfString:@"zh-Hant"].location != NSNotFound) {
-        preferredLanguage = @"zh-Hant";
-    } else if ([preferredLanguage rangeOfString:@"vi"].location != NSNotFound) {
-        preferredLanguage = @"vi";
-    } else if ([preferredLanguage rangeOfString:@"ko"].location != NSNotFound) {
+    if ([preferredLanguage rangeOfString:@"ko"].location != NSNotFound) {
         preferredLanguage = @"ko";
     } else {
         preferredLanguage = @"en";
