@@ -57,7 +57,10 @@
     }
     self.imageRequestID = imageRequestID;
     self.selectPhotoButton.selected = model.isSelected;
-    self.selectImageView.image = self.selectPhotoButton.isSelected ? self.photoSelImage : self.photoDefImage;
+    self.selectImageView.image = self.photoSelImage;
+    self.selectImageView.hidden = !self.selectPhotoButton.isSelected;
+    
+//    self.selectImageView.image = self.selectPhotoButton.isSelected ? self.photoSelImage : self.photoDefImage;
     self.indexLabel.hidden = !self.selectPhotoButton.isSelected;
     
     self.type = (NSInteger)model.type;
@@ -83,6 +86,7 @@
 
 - (void)setIndex:(NSInteger)index {
     _index = index;
+    self.indexLabel.font = [UIFont fontWithName:@"Montserrat-Regular" size:15];
     self.indexLabel.text = [NSString stringWithFormat:@"%zd", index];
     [self.contentView bringSubviewToFront:self.indexLabel];
 }
@@ -94,7 +98,7 @@
         self.selectPhotoButton.hidden = !showSelectBtn || !selectable;
     }
     if (!self.selectImageView.hidden) {
-        self.selectImageView.hidden = !showSelectBtn || !selectable;
+        self.selectImageView.hidden = !showSelectBtn || selectable;
     }
 }
 
@@ -139,7 +143,8 @@
     if (self.didSelectPhotoBlock) {
         self.didSelectPhotoBlock(sender.isSelected);
     }
-    self.selectImageView.image = sender.isSelected ? self.photoSelImage : self.photoDefImage;
+//    self.selectImageView.image = sender.isSelected ? self.photoSelImage : self.photoDefImage;
+    self.selectImageView.hidden = !self.selectPhotoButton.isSelected;
     if (sender.isSelected) {
         [UIView showOscillatoryAnimationWithLayer:_selectImageView.layer type:TZOscillatoryAnimationToBigger];
         // 用户选中了该图片，提前获取一下大图
@@ -173,7 +178,7 @@
         self.model.iCloudFailed = iCloudSyncFailed;
         if (iCloudSyncFailed && self.didSelectPhotoBlock) {
             self.didSelectPhotoBlock(YES);
-            self.selectImageView.image = self.photoDefImage;
+//            self.selectImageView.image = self.photoDefImage;
         }
         [self hideProgressView];
     } progressHandler:^(double progress, NSError *error, BOOL *stop, NSDictionary *info) {
@@ -414,7 +419,7 @@
         nameColor = UIColor.labelColor;
     }
     NSMutableAttributedString *nameString = [[NSMutableAttributedString alloc] initWithString:model.name attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16],NSForegroundColorAttributeName:nameColor}];
-    NSAttributedString *countString = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"  (%zd)",model.count] attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16],NSForegroundColorAttributeName:[UIColor lightGrayColor]}];
+    NSAttributedString *countString = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"  (%zd)",model.count] attributes:@{NSFontAttributeName:[UIFont fontWithName:@"Montserrat-Regular" size:13],NSForegroundColorAttributeName:[UIColor lightGrayColor]}];
     [nameString appendAttributedString:countString];
     self.titleLabel.attributedText = nameString;
     [[TZImageManager manager] getPostImageWithAlbumModel:model completion:^(UIImage *postImage) {

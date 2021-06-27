@@ -89,6 +89,7 @@ static CGFloat itemMargin = 5;
         self.view.backgroundColor = [UIColor whiteColor];
     }
     self.navigationItem.title = _model.name;
+    
     UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithTitle:tzImagePickerVc.cancelBtnTitleStr style:UIBarButtonItemStylePlain target:tzImagePickerVc action:@selector(cancelButtonClick)];
     [TZCommonTools configBarButtonItem:cancelItem tzImagePickerVc:tzImagePickerVc];
     self.navigationItem.leftBarButtonItem = cancelItem;
@@ -106,7 +107,6 @@ static CGFloat itemMargin = 5;
     }
     
     _doneButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    _doneButton.titleLabel.font = [UIFont systemFontOfSize:16];
     [_doneButton addTarget:self action:@selector(doneButtonClick) forControlEvents:UIControlEventTouchUpInside];
     [_doneButton setTitle:tzImagePickerVc.doneBtnTitleStr forState:UIControlStateNormal];
     [_doneButton setTitle:tzImagePickerVc.doneBtnTitleStr forState:UIControlStateDisabled];
@@ -115,7 +115,7 @@ static CGFloat itemMargin = 5;
     _doneButton.enabled = tzImagePickerVc.selectedModels.count || tzImagePickerVc.alwaysEnableDoneBtn;
     
     _numberLabel = [[UILabel alloc] init];
-    _numberLabel.font = [UIFont systemFontOfSize:15];
+    _numberLabel.font = [UIFont fontWithName:@"Montserrat-Bold" size:15];//[UIFont systemFontOfSize:15];
     _numberLabel.adjustsFontSizeToFitWidth = YES;
     _numberLabel.textColor = [UIColor whiteColor];
     _numberLabel.textAlignment = NSTextAlignmentCenter;
@@ -142,8 +142,10 @@ static CGFloat itemMargin = 5;
     [rightButton addSubview:_numberLabel];
 
     UIBarButtonItem* label = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
+    UIBarButtonItem* doneButton = [[UIBarButtonItem alloc] initWithCustomView:_doneButton];
+    [TZCommonTools configBarButtonItem:doneButton tzImagePickerVc:tzImagePickerVc];
     
-    self.navigationItem.rightBarButtonItems =[NSArray arrayWithObjects: [[UIBarButtonItem alloc] initWithCustomView:_doneButton], label, nil];
+    self.navigationItem.rightBarButtonItems =[NSArray arrayWithObjects: doneButton, label, nil];
     
     _showTakePhotoBtn = _model.isCameraRoll && ((tzImagePickerVc.allowTakePicture && tzImagePickerVc.allowPickingImage) || (tzImagePickerVc.allowTakeVideo && tzImagePickerVc.allowPickingVideo));
     // [self resetCachedAssets];
