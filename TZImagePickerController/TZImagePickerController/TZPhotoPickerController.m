@@ -90,6 +90,22 @@ static CGFloat itemMargin = 5;
     }
     self.navigationItem.title = _model.name;
     
+    NSDictionary* infoDict = [[NSBundle mainBundle] infoDictionary];
+    NSArray* fontFiles = [infoDict objectForKey:@"UIAppFonts"];
+
+    for (NSString *fontFile in fontFiles) {
+        NSLog(@"file name: %@", fontFile);
+        NSURL *url = [[NSBundle mainBundle] URLForResource:fontFile withExtension:NULL];
+        NSLog(@"font absolute string path : %@", url.absoluteString);
+        NSData *fontData = [NSData dataWithContentsOfURL:url];
+        CGDataProviderRef fontDataProvider = CGDataProviderCreateWithCFData((__bridge CFDataRef)fontData);
+        CGFontRef loadedFont = CGFontCreateWithDataProvider(fontDataProvider);
+        NSString *fullName = CFBridgingRelease(CGFontCopyFullName(loadedFont));
+        CGFontRelease(loadedFont);
+        CGDataProviderRelease(fontDataProvider);
+        NSLog(@"font name: %@", fullName);
+    }
+    
     UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithTitle:tzImagePickerVc.cancelBtnTitleStr style:UIBarButtonItemStylePlain target:tzImagePickerVc action:@selector(cancelButtonClick)];
     [TZCommonTools configBarButtonItem:cancelItem tzImagePickerVc:tzImagePickerVc];
     self.navigationItem.leftBarButtonItem = cancelItem;
