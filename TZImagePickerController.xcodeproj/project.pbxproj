@@ -13,6 +13,14 @@
 		6DC358661CC8BAFD00898D29 /* TZImagePickerController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6DC358651CC8BAFD00898D29 /* TZImagePickerController.bundle */; };
 		6DC84D0A1DF5358500A107A9 /* TZImageCropManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC84D091DF5358500A107A9 /* TZImageCropManager.m */; };
 		6DD0502B1DF659ED0057C78D /* TZProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD0502A1DF659ED0057C78D /* TZProgressView.m */; };
+		853B6560268836AE00653D3E /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853B655E268836AD00653D3E /* Montserrat-Regular.ttf */; };
+		853B6561268836AE00653D3E /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853B655E268836AD00653D3E /* Montserrat-Regular.ttf */; };
+		853B65652688371A00653D3E /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853B65642688371A00653D3E /* Montserrat-Bold.ttf */; };
+		853B65662688371A00653D3E /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853B65642688371A00653D3E /* Montserrat-Bold.ttf */; };
+		853B656926883F9C00653D3E /* Spoqa Han Sans Neo Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 853B656726883F9C00653D3E /* Spoqa Han Sans Neo Regular.otf */; };
+		853B656A26883F9C00653D3E /* Spoqa Han Sans Neo Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 853B656726883F9C00653D3E /* Spoqa Han Sans Neo Regular.otf */; };
+		853B656B26883F9C00653D3E /* Spoqa Han Sans Neo Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 853B656826883F9C00653D3E /* Spoqa Han Sans Neo Bold.otf */; };
+		853B656C26883F9C00653D3E /* Spoqa Han Sans Neo Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 853B656826883F9C00653D3E /* Spoqa Han Sans Neo Bold.otf */; };
 		90020E1320F8840800D3AB10 /* TZImagePickerController.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 90020E1220F8840800D3AB10 /* TZImagePickerController.podspec */; };
 		90020E1520F8840F00D3AB10 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 90020E1420F8840E00D3AB10 /* README.md */; };
 		9005E2B3257A462E002A8682 /* UIView+TZLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9005E2B1257A462E002A8682 /* UIView+TZLayout.m */; };
@@ -130,6 +138,10 @@
 		6DD050291DF659ED0057C78D /* TZProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZProgressView.h; sourceTree = "<group>"; };
 		6DD0502A1DF659ED0057C78D /* TZProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZProgressView.m; sourceTree = "<group>"; };
 		853B655D2684932800653D3E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		853B655E268836AD00653D3E /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		853B65642688371A00653D3E /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		853B656726883F9C00653D3E /* Spoqa Han Sans Neo Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Neo Regular.otf"; sourceTree = "<group>"; };
+		853B656826883F9C00653D3E /* Spoqa Han Sans Neo Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Neo Bold.otf"; sourceTree = "<group>"; };
 		90020E1220F8840800D3AB10 /* TZImagePickerController.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TZImagePickerController.podspec; sourceTree = SOURCE_ROOT; };
 		90020E1420F8840E00D3AB10 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		9005E2B1257A462E002A8682 /* UIView+TZLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TZLayout.m"; sourceTree = "<group>"; };
@@ -235,6 +247,10 @@
 		900E65731C2BB8D5003D9A9E = {
 			isa = PBXGroup;
 			children = (
+				853B656826883F9C00653D3E /* Spoqa Han Sans Neo Bold.otf */,
+				853B656726883F9C00653D3E /* Spoqa Han Sans Neo Regular.otf */,
+				853B65642688371A00653D3E /* Montserrat-Bold.ttf */,
+				853B655E268836AD00653D3E /* Montserrat-Regular.ttf */,
 				900E657E1C2BB8D5003D9A9E /* TZImagePickerController */,
 				900E65981C2BB8D5003D9A9E /* TZImagePickerControllerTests */,
 				900E65A31C2BB8D5003D9A9E /* TZImagePickerControllerUITests */,
@@ -545,10 +561,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				853B6560268836AE00653D3E /* Montserrat-Regular.ttf in Resources */,
+				853B656926883F9C00653D3E /* Spoqa Han Sans Neo Regular.otf in Resources */,
 				90020E1320F8840800D3AB10 /* TZImagePickerController.podspec in Resources */,
+				853B656B26883F9C00653D3E /* Spoqa Han Sans Neo Bold.otf in Resources */,
 				90A74B85203287C200D84C2A /* Localizable.strings in Resources */,
 				900E658F1C2BB8D5003D9A9E /* LaunchScreen.storyboard in Resources */,
 				90020E1520F8840F00D3AB10 /* README.md in Resources */,
+				853B65652688371A00653D3E /* Montserrat-Bold.ttf in Resources */,
 				6DC358661CC8BAFD00898D29 /* TZImagePickerController.bundle in Resources */,
 				900E658C1C2BB8D5003D9A9E /* Assets.xcassets in Resources */,
 				900E658A1C2BB8D5003D9A9E /* Main.storyboard in Resources */,
@@ -573,7 +593,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				853B6561268836AE00653D3E /* Montserrat-Regular.ttf in Resources */,
+				853B656A26883F9C00653D3E /* Spoqa Han Sans Neo Regular.otf in Resources */,
 				9F763A6E1FA0734800D9E526 /* TZImagePickerController.bundle in Resources */,
+				853B65662688371A00653D3E /* Montserrat-Bold.ttf in Resources */,
+				853B656C26883F9C00653D3E /* Spoqa Han Sans Neo Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
