@@ -420,9 +420,11 @@ static CGFloat itemMargin = 5;
     if (self.navigationController.navigationBar.isTranslucent) {
         top = naviBarHeight;
         if (!isStatusBarHidden && isFullScreen) top += [TZCommonTools tz_statusBarHeight];
-        collectionViewHeight = tzImagePickerVc.showSelectBtn ? self.view.tz_height - toolBarHeight - top : self.view.tz_height - top;;
+        collectionViewHeight = self.view.tz_height - top;
+//        collectionViewHeight = tzImagePickerVc.showSelectBtn ? self.view.tz_height - toolBarHeight - top : self.view.tz_height - top;
     } else {
-        collectionViewHeight = tzImagePickerVc.showSelectBtn ? self.view.tz_height - toolBarHeight : self.view.tz_height;
+        collectionViewHeight = self.view.tz_height;
+//        collectionViewHeight = tzImagePickerVc.showSelectBtn ? self.view.tz_height - toolBarHeight : self.view.tz_height;
     }
     _collectionView.frame = CGRectMake(0, top, self.view.tz_width, collectionViewHeight);
     _noDataLabel.frame = _collectionView.bounds;
