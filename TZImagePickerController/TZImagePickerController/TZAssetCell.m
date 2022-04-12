@@ -60,7 +60,6 @@
     self.selectImageView.image = self.photoSelImage;
     self.selectImageView.hidden = !self.selectPhotoButton.isSelected;
     
-//    self.selectImageView.image = self.selectPhotoButton.isSelected ? self.photoSelImage : self.photoDefImage;
     self.indexLabel.hidden = !self.selectPhotoButton.isSelected;
     
     self.type = (NSInteger)model.type;
@@ -98,7 +97,7 @@
         self.selectPhotoButton.hidden = !showSelectBtn || !selectable;
     }
     if (!self.selectImageView.hidden) {
-        self.selectImageView.hidden = !showSelectBtn || selectable;
+        self.selectImageView.hidden = (!showSelectBtn || selectable) && !self.selectPhotoButton.isSelected;
     }
 }
 

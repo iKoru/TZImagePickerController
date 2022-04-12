@@ -94,16 +94,16 @@ static CGFloat itemMargin = 5;
     NSArray* fontFiles = [infoDict objectForKey:@"UIAppFonts"];
 
     for (NSString *fontFile in fontFiles) {
-        NSLog(@"file name: %@", fontFile);
+//        NSLog(@"file name: %@", fontFile);
         NSURL *url = [[NSBundle mainBundle] URLForResource:fontFile withExtension:NULL];
-        NSLog(@"font absolute string path : %@", url.absoluteString);
+//        NSLog(@"font absolute string path : %@", url.absoluteString);
         NSData *fontData = [NSData dataWithContentsOfURL:url];
         CGDataProviderRef fontDataProvider = CGDataProviderCreateWithCFData((__bridge CFDataRef)fontData);
         CGFontRef loadedFont = CGFontCreateWithDataProvider(fontDataProvider);
         NSString *fullName = CFBridgingRelease(CGFontCopyFullName(loadedFont));
         CGFontRelease(loadedFont);
         CGDataProviderRelease(fontDataProvider);
-        NSLog(@"font name: %@", fullName);
+//        NSLog(@"font name: %@", fullName);
     }
     
     UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithTitle:tzImagePickerVc.cancelBtnTitleStr style:UIBarButtonItemStylePlain target:tzImagePickerVc action:@selector(cancelButtonClick)];
@@ -636,11 +636,11 @@ static CGFloat itemMargin = 5;
         }
         return cell;
     }
-    // the cell dipaly photo or video / 展示照片或视频的cell
+    // the cell display photo or video / 展示照片或视频的cell
     TZAssetCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TZAssetCell" forIndexPath:indexPath];
     cell.allowPickingMultipleVideo = tzImagePickerVc.allowPickingMultipleVideo;
     cell.photoDefImage = tzImagePickerVc.photoDefImage;
-    cell.photoSelImage = tzImagePickerVc.photoSelImage;
+    cell.photoSelImage = tzImagePickerVc.photoNumberIconImage;
     cell.assetCellDidSetModelBlock = tzImagePickerVc.assetCellDidSetModelBlock;
     cell.assetCellDidLayoutSubviewsBlock = tzImagePickerVc.assetCellDidLayoutSubviewsBlock;
     TZAssetModel *model;
